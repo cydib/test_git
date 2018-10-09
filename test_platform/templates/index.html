@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="SDK">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>测试平台</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="//v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
+    <title>SDK测试平台</title>
+    {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
 
   </head>
 
@@ -28,11 +26,10 @@
           <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
           <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-          <p style="color:red">{{index_error}}</p> <br>
-          {{ error }}
+          <p style="color:red">{{error}}</p> <br>
           {% csrf_token %}
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                  <button class="btn btn-lg btn-primary btn-block">django confirmation</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>
+        <button class="btn btn-lg btn-primary btn-block">django confirmation</button>
 
       </form>
 
