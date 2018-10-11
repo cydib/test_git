@@ -41,3 +41,7 @@ def logout(request):
     auth.logout(request)
     respone = HttpResponseRedirect("/")
     return respone
+
+
+def create_project(request):
+    return render(request, "add_project.html")
