@@ -1,3 +1,3 @@
-# 学习开发测试平台
-# task1
+# 开发测试平台
+# 连接mysql
 ### Hello world
