@@ -34,7 +34,7 @@ def login_action(request):
 def project_manage(request):
     username = request.session.get("user", '')
     project = Project.objects.all()
-    return render(request, "project_manage.html", {"user": username, "projects": project})
+    return render(request, "project_manage.html", {"user": username, "projects": project, "type": "list"})
 
 
 def logout(request):
@@ -44,4 +44,4 @@ def logout(request):
 
 
 def create_project(request):
-    return render(request, "add_project.html")
+    return render(request, "project_manage.html", {"type": "add"})
