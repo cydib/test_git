@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
 from project_app.models import Project
 
 
@@ -15,3 +16,8 @@ def project_manage(request):
 @login_required
 def create_project(request):
     return render(request, "project_manage.html", {"type": "add"})
+
+
+@login_required
+def save_project(request):
+    return render(request, "project_manage.html", {"type": "save"})
