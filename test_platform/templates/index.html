@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="SDK">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>SDK测试平台</title>
-    {% load static %}
-      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-      <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
-
-  </head>
+{% extends "base.html" %}
+{% block content %}
 
   <body>
 
@@ -36,4 +20,4 @@
 
   </body>
 
-</html>
+{% endblock %}
