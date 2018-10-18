@@ -74,7 +74,9 @@
                         <td>{{p.create_time}}</td>
                         <td><a href="/manage/edit_project/{{p.id}}/" class="glyphicon glyphicon-pencil"
                                aria-hidden="true"></a></td>
-                        <td><a href="/manage/del_project/{{p.id}}/" class="glyphicon glyphicon-remove"
+                        <td>
+                            <a href="/manage/del_project/{{p.id}}/" onclick="alert('确定要删除该项目吗？')"
+                               class="glyphicon glyphicon-remove"
                                aria-hidden="true"></a></td>
                     </tr>
                     {% endfor %}
@@ -99,7 +101,7 @@
         </div>
         {% endif %}
 
-         {% if type == 'edit'%}
+        {% if type == 'edit'%}
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h3 class="sub-header">编辑项目</h3>
             <form method="post" action="/manage/edit_project/{{pid}}/">

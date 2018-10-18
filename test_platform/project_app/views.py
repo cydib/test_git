@@ -43,3 +43,9 @@ def edit_project(request, pid):
         else:
             form = ProjectForm()
     return render(request, "project_manage.html", {'form': form, "pid": pid, "type": "edit"})
+
+
+@login_required
+def del_project(request, pid):
+        Project.objects.get(id=pid).delete()
+        return HttpResponseRedirect('/manage/project_manage/')
