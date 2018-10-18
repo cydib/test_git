@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab055d29-e6d3-4099-a689-606d9678766c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/project_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/project_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/project_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/templates/project_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/project_manage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +16,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_platform/project_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="378">
+              <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -606,8 +602,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/project_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="378">
+          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
