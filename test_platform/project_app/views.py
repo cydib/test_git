@@ -29,3 +29,21 @@ def add_project(request):
         form = ProjectForm()
     return render(request, "project_manage.html", {'form': form, "type": "add"})
 
+
+@login_required
+def edit_project(request, pid):
+    if request.method == "POST":
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            describe = form.cleaned_data['describe']
+            print("name", name)
+            print("describe", describe)
+            Project.objects.select_for_update().filter(id=pid).update(name=name, describe=describe)
+            return HttpResponseRedirect('/manage/project_manage/')
+    else:
+        if pid:
+            form = ProjectForm(instance=Project.objects.get(id=pid))
+        else:
+            form = ProjectForm()
+    return render(request, "project_manage.html", {'form': form, "pid": pid, "type": "edit"})
