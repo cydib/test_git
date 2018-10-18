@@ -75,7 +75,7 @@
                         <td><a href="/manage/edit_project/{{p.id}}/" class="glyphicon glyphicon-pencil"
                                aria-hidden="true"></a></td>
                         <td>
-                            <a href="/manage/del_project/{{p.id}}/" onclick="alert('确定要删除该项目吗？')"
+                            <a href="/manage/del_project/{{p.id}}/" onclick="return confirm('确定要删除该项目吗？')"
                                class="glyphicon glyphicon-remove"
                                aria-hidden="true"></a></td>
                     </tr>
