@@ -21,7 +21,8 @@ def add_project(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             describe = form.cleaned_data['describe']
-            Project.objects.create(name=name, describe=describe)
+            status = form.cleaned_data['status']
+            Project.objects.create(name=name, describe=describe, status=status)
             return HttpResponseRedirect('/manage/project_manage/')
     else:
         form = ProjectForm()
@@ -35,7 +36,8 @@ def edit_project(request, pid):
         if form.is_valid():
             name = form.cleaned_data['name']
             describe = form.cleaned_data['describe']
-            Project.objects.select_for_update().filter(id=pid).update(name=name, describe=describe)
+            status = form.cleaned_data['status']
+            Project.objects.select_for_update().filter(id=pid).update(name=name, describe=describe, status=status)
             return HttpResponseRedirect('/manage/project_manage/')
     else:
         if pid:
