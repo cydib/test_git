@@ -1,10 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
-</body>
-</html>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/manage/project_manage/">测试平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">{{ user }}</a></li>
+                <li><a href="/logout/">退出</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/manage/project_manage/">项目管理</a></li>
+                <li class="active"><a href="/manage/module_manage/">模块管理</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">用例管理</a></li>
+                <li><a href="">任务管理</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">mockserver</a></li>
+                <li><a href="">测试工具</a></li>
+            </ul>
+        </div>
+
+        {%if type == 'list' %}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <h3 class="sub-header">模块列表</h3>
+            <button type="button" class="btn btn-lg btn-success" onclick="window.location.href='/manage/add_module/'">
+                创建模块
+            </button>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>描述</th>
+                        <th>项目</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for m in modules %}
+                    <tr>
+                        <td>{{m.id}}</td>
+                        <td>{{m.name}}</td>
+                        <td>{{m.describe}}</td>
+                        <td>{{m.project}}</td>
+                        <td>{{m.create_time}}</td>
+                        <td><a href="/manage/edit_module/{{m.id}}/" class="glyphicon glyphicon-pencil"
+                               aria-hidden="true"></a></td>
+                        <td>
+                            <a href="/manage/del_module/{{m.id}}/" onclick="return confirm('确定要删除该模块吗？')"
+                               class="glyphicon glyphicon-remove"
+                               aria-hidden="true"></a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if type == 'add'%}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h3 class="sub-header">新增模块</h3>
+            <form method="post" action="/manage/add_module/">
+
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-default" onclick="window.location.href='/manage/module_manage/'; return false">取消</button>
+                <button type="submit" class="btn btn-default">创建
+                </button>
+
+            </form>
+        </div>
+        {% endif %}
+
+        {% if type == 'edit'%}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h3 class="sub-header">编辑模块</h3>
+            <form role="form" method="post">
+
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-default" onclick="window.location.href='/manage/module_manage/'; return false">取消</button>
+
+                <button type="submit" class="btn btn-default">保存
+                </button>
+
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
