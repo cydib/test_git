@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab055d29-e6d3-4099-a689-606d9678766c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test_platform/project_app/tests/test_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test_platform_dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test_platform_dev.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/project_app/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/tests/test_project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/user_app/tests/testUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/user_app/tests/testUI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,13 +15,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/user_app/tests/testUI.py">
+      <file leaf-file-name="testUI_module.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="260">
+              <caret line="62" column="24" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="24" />
               <folding>
-                <element signature="e#171#203#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,29 +30,8 @@
       <file leaf-file-name="test_project.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="39" column="44" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="39" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testUnit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/user_app/tests/testUnit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-388">
-              <caret line="38" column="30" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_module.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+            <state relative-caret-position="198">
+              <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -117,6 +92,8 @@
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/tests.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/test_project.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/test_module.py" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py" />
       </list>
     </option>
   </component>
@@ -286,34 +263,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_platform/user_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/templates/project_manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
-          <caret line="78" column="67" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/test_platform/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2232">
-          <caret line="124" column="1" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -565,16 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/user_app/tests/testUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#171#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python37/Lib/site-packages/django/test/client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -610,20 +549,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py">
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="39" column="44" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="39" selection-end-column="44" />
+        <state relative-caret-position="620">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="24" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_module.py">
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+        <state relative-caret-position="198">
+          <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python37/Lib/site-packages/selenium/webdriver/remote/switch_to.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/user_app/tests/testUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="51" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="37" selection-end-column="51" />
+          <folding>
+            <element signature="e#171#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="24" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
