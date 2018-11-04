@@ -85,11 +85,13 @@
                 let reg=/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
                 if(url === ""){
                     $("#warnurl").text("请求url不能为空");
+                    $("#warnurl").show();
                     return false;
                 }
                 else if(!reg.test(url)){
                     console.log(reg.test(url));
                     $("#warnurl").text("请求url不正确");
+                    $("#warnurl").show();
                     return false;
                 }
                 else
