@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab055d29-e6d3-4099-a689-606d9678766c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test_platform_dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test_platform_dev.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/interface_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/interface_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/interface_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/interface_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/templates/api_debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/api_debug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/templates/case_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/case_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/test_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/test_platform/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,25 +20,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testUI_module.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py">
+      <file leaf-file-name="api_debug.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_platform/templates/api_debug.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="62" column="24" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="461">
+              <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_project.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_platform/interface_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
+            <state relative-caret-position="532">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_platform/interface_app/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,7 +91,6 @@
         <option value="$PROJECT_DIR$/test_platform/project_app/admin.py" />
         <option value="$PROJECT_DIR$/test_platform/test_platform/urls.py" />
         <option value="$PROJECT_DIR$/test_platform/user_app/views.py" />
-        <option value="$PROJECT_DIR$/test_platform/test_platform/settings.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/views.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/views/project_views.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/models.py" />
@@ -94,6 +110,11 @@
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/test_module.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py" />
+        <option value="$PROJECT_DIR$/test_platform/test_platform/settings.py" />
+        <option value="$PROJECT_DIR$/test_platform/interface_app/urls.py" />
+        <option value="$PROJECT_DIR$/test_platform/templates/case_manage.html" />
+        <option value="$PROJECT_DIR$/test_platform/interface_app/views.py" />
+        <option value="$PROJECT_DIR$/test_platform/templates/api_debug.html" />
       </list>
     </option>
   </component>
@@ -107,8 +128,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="555" />
-    <option name="y" value="105" />
+    <option name="x" value="371" />
+    <option name="y" value="-23" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
@@ -117,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,6 +150,12 @@
               <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_platform_dev" type="462c0819:PsiDirectoryNode" />
               <item name="test_platform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_platform_dev" type="462c0819:PsiDirectoryNode" />
+              <item name="test_platform" type="462c0819:PsiDirectoryNode" />
+              <item name="interface_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
@@ -146,15 +174,13 @@
               <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_platform_dev" type="462c0819:PsiDirectoryNode" />
               <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="project_app" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_platform_dev" type="462c0819:PsiDirectoryNode" />
               <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="project_app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test_platform_dev" type="b2602c69:ProjectViewProjectNode" />
@@ -179,7 +205,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,7 +251,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32872927" />
@@ -235,7 +259,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32872927" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17773438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18498659" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -263,27 +287,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test_platform/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="82" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="15" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/test_platform/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/user_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -390,13 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/test_platform/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python37/Lib/site-packages/django/forms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3006">
@@ -447,21 +443,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/templates/module_manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="110" column="49" selection-start-line="110" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/user_app/tests/test_project_views.py" />
-    <entry file="file://$PROJECT_DIR$/test_platform/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python37/Lib/site-packages/django/test/testcases.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -496,9 +478,6 @@
           <caret line="25" column="45" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/project_app/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -549,26 +528,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_module.py" />
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/test_project.py" />
     <entry file="file://C:/Python37/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -587,28 +548,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
           <caret line="37" column="51" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="37" selection-end-column="51" />
-          <folding>
-            <element signature="e#171#203#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_project.py" />
     <entry file="file://$PROJECT_DIR$/test_platform/project_app/tests/testUI_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="380">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/module_manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/test_platform/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/case_manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/interface_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/interface_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/api_debug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#fieldset#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

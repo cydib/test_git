@@ -1,7 +1,6 @@
 {% extends "case_manage.html" %}
 {% block api_debug %}
 
-<form class="form-horizontal">
     <fieldset>
         <div id="legend" class="">
             <legend class="">调试</legend>
@@ -9,7 +8,6 @@
 
         <div style="width:80%; margin-left: 20px;">
         <form action="/debug/" method="get" class="bs-example bs-example-form" role="form" style="margin-top: 30px">
-
             <div class="input-group">
                 <span class="input-group-addon">名称</span>
                 <input id="req_name" type="text" class="form-control" placeholder="name">
@@ -20,6 +18,7 @@
                 <span class="input-group-addon">URL</span>
                 <input id="req_url" type="text" class="form-control" placeholder="url">
             </div>
+            <div id="warnurl" style="color: red"></div>
             <br>
             <div>
                 <label>请求方法：</label>
@@ -73,7 +72,41 @@
         </div>
 
     </fieldset>
-</form>
 
+    <script src="/static/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#send").click(function (){
+
+                let url = $("#req_url").val();
+                let method = $('input[name="req_method"]:checked').val();
+                let parameter = $("#req_parameter").val();
+                let reg=/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+                if(url === ""){
+                    $("#warnurl").text("请求url不能为空");
+                    return false;
+                }
+                else if(!reg.test(url)){
+                    console.log(reg.test(url));
+                    $("#warnurl").text("请求url不正确");
+                    return false;
+                }
+                else
+                {
+                    $("#warnurl").hide();
+                }
+
+                $.post("/interface/api_debug/", {
+                    "req_url": url,
+                    "req_method": method,
+                    "req_parameter": parameter
+                    }, function (resp){
+                    $("#result").html(resp);
+                    });
+
+                })
+        });
+    </script>
 
 {% endblock %}
