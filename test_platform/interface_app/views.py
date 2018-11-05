@@ -31,7 +31,7 @@ def api_debug(request):
             r = requests.get(url)
 
         if method == "post":
-            r = requests.post(url, data=parameter)
+            r = requests.post(url, data=parameter, verify=False)
 
         return HttpResponse(r.text)
 
