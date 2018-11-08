@@ -60,7 +60,8 @@
             <p style="color:#8B8989">说明：以字典的方式设置参数，如：{"id":1, "name":"名称"}</p>
             <div style="width: 100%; height: 60px;">
                 <button type="button" class="btn btn-success" id="send" style="float: right;margin-right: 10px;">调试
-                </button>
+                    <button type="button" class="btn btn-success" id="save" style="float: right;margin-right: 10px;">保存
+                    </button>
             </div>
 
         </form>
@@ -77,9 +78,9 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script>
-     $("#clear_result").click(function () {
-            $("#result").val('');
-        });
+    $("#clear_result").click(function () {
+        $("#result").val('');
+    });
     $(document).ready(function () {
         $("#send").click(function () {
             let url = $("#req_url").val();
@@ -109,7 +110,13 @@
                 $("#result").val(resp);
             });
 
-        })
+        });
+
+        $("#save").click(function(){
+            $.post("save_case/", {
+
+            });
+        });
 
     });
 </script>

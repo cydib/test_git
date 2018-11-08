@@ -29,9 +29,11 @@ def api_debug(request):
         # payload = json.loads(parameter.replace("'", "\""))
         if method == "get":
             r = requests.get(url)
+            r.encoding = "utf-8"
 
         if method == "post":
             r = requests.post(url, data=parameter)
+            r.encoding = "utf-8"
 
         return HttpResponse(r.text)
 
