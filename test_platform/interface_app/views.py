@@ -34,6 +34,7 @@ def api_debug(request):
         if method == "post":
             r = requests.post(url, data=parameter)
             r.encoding = "utf-8"
+            r = requests.post(url, data=parameter, verify=False)
 
         return HttpResponse(r.text)
 
