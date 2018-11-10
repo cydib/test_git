@@ -38,3 +38,8 @@ def api_debug(request):
 
         return HttpResponse(r.text)
 
+
+
+def save_case(request):
+    if request.method == "POST":
+        return HttpResponse("Hello")
