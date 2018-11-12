@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from project_app.models import Project, Module
 from interface_app.models import TestCase
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 # Create your views here.
 
@@ -28,9 +30,22 @@ def get_porject_list(request):
 
 
 def case_manage(request):
+    testcases = TestCase.objects.all()
+    paginator = Paginator(testcases, 5)
+    page = request.GET.get('page')
+
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        # 如果页数不是整型, 取第一页.
+        contacts = paginator.page(1)
+    except EmptyPage:
+        # 如果页数超出查询范围，取最后一页
+        contacts = paginator.page(paginator.num_pages)
+
     if request.method == "GET":
         testcase = TestCase.objects.all()
-        return render(request, "case_manage.html", {"type": "list","testcases": testcase})
+        return render(request, "case_manage.html", {"type": "list", "testcases": contacts})
     else:
         return HttpResponse("404")
 
@@ -92,5 +107,29 @@ def save_case(request):
         if case is not None:
             return HttpResponse("保存成功！")
 
+    else:
+        return HttpResponse("404")
+
+
+
+def search_case_name(request):
+    if request.method == "GET":
+        case_name = request.GET.get("case_name", "")
+        case = TestCase.objects.filter(name__contains=case_name)
+
+        paginator = Paginator(case, 5)
+        page = request.GET.get('page')
+
+        try:
+            contacts = paginator.page(page)
+        except PageNotAnInteger:
+            contacts = paginator.page(1)
+        except EmptyPage:
+            contacts=paginator.page(paginator.num_pages)
+        return render(request, "case_manage.html",{
+            "type": "list",
+            "testcases": contacts,
+            "case_name": case_name,
+        })
     else:
         return HttpResponse("404")
