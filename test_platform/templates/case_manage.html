@@ -51,22 +51,26 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>名称</th>
-                            <th>描述</th>
-                            <th>状态</th>
-                            <th>创建时间</th>
+                            <th>ID</th>
+                            <th>所属模块</th>
+                            <th>用例名称</th>
+                            <th>URL</th>
+                            <th>请求方法</th>
+                            <th>参数类型</th>
+                            <th>参数</th>
                             <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for project in projects %}
+                        {% for case in testcases %}
                         <tr>
-                            <td>{{ project.id }}</td>
-                            <td>{{ project.name }}</td>
-                            <td>{{ project.describe }}</td>
-                            <td>{{ project.status }}</td>
-                            <td>{{ project.create_time | date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ case.id }}</td>
+                            <td>{{ case.module_id }}</td>
+                            <td>{{ case.name }}</td>
+                            <td>{{ case.url }}</td>
+                            <td>{{ case.req_method }}</td>
+                            <td>{{ case.par_type }}</td>
+                            <td>{{ case.create_time | date:"Y-m-d H:i:s" }}</td>
                             <td>
                                 <a href="/manage/edit_project/{{project.id}}/">编辑</a>
                                 <a href="/manage/delete_project/{{project.id}}/">删除</a>
