@@ -32,7 +32,7 @@
                 <li><a href="/manage/module_manage/">模块管理</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">用例管理</a></li>
+                <li class="active"><a href="/interface/case_manage/">用例管理</a></li>
                 <li><a href="/interface/task_manage/">任务管理</a></li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -58,6 +58,7 @@
                             <th>请求方法</th>
                             <th>参数类型</th>
                             <th>参数</th>
+                            <th>创建时间</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -70,6 +71,7 @@
                             <td>{{ case.url }}</td>
                             <td>{{ case.req_method }}</td>
                             <td>{{ case.par_type }}</td>
+                            <td>{{ case.req_parameter }}</td>
                             <td>{{ case.create_time | date:"Y-m-d H:i:s" }}</td>
                             <td>
                                 <a href="/manage/edit_project/{{project.id}}/">编辑</a>
