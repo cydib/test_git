@@ -31,7 +31,7 @@ def get_porject_list(request):
 
 def case_manage(request):
     testcases = TestCase.objects.all()
-    paginator = Paginator(testcases, 5)
+    paginator = Paginator(testcases, 10)
     page = request.GET.get('page')
 
     try:
@@ -50,14 +50,14 @@ def case_manage(request):
         return HttpResponse("404")
 
 
-def debug(request):
+def add_case(request):
     if request.method == "GET":
-        return render(request, "api_debug.html", {"type": "debug"})
+        return render(request, "add_case.html", {"type": "add_case"})
     else:
         return HttpResponse("404")
 
 
-def api_debug(request):
+def debug_case(request):
     if request.method == "POST":
         url = request.POST.get("req_url")
         method = request.POST.get("req_method")
@@ -111,13 +111,12 @@ def save_case(request):
         return HttpResponse("404")
 
 
-
 def search_case_name(request):
     if request.method == "GET":
         case_name = request.GET.get("case_name", "")
         case = TestCase.objects.filter(name__contains=case_name)
 
-        paginator = Paginator(case, 5)
+        paginator = Paginator(case, 10)
         page = request.GET.get('page')
 
         try:
@@ -125,11 +124,19 @@ def search_case_name(request):
         except PageNotAnInteger:
             contacts = paginator.page(1)
         except EmptyPage:
-            contacts=paginator.page(paginator.num_pages)
-        return render(request, "case_manage.html",{
+            contacts = paginator.page(paginator.num_pages)
+        return render(request, "case_manage.html", {
             "type": "list",
             "testcases": contacts,
             "case_name": case_name,
         })
     else:
         return HttpResponse("404")
+
+
+def edit_case(request, cid):
+    if request.method == "GET":
+        print("cid: ", cid)
+    return render(request, "edit_case.html", {
+        "type": "edit_case",
+    })

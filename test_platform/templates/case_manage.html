@@ -34,7 +34,7 @@
                 </ul>
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="/interface/case_manage/">用例管理</a></li>
-                    <li><a href="/interface/task_manage/">任务管理</a></li>
+                    <li><a href="#">任务管理</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
                     <li><a href="">mockserver</a></li>
@@ -46,7 +46,7 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h3 class="sub-header">用例列表
                         <button type="button" class="btn btn-success" style="float: right;"
-                                onclick="window.location.href='/interface/debug/'">运行
+                                onclick="window.location.href='/interface/add_case/'">创建
                         </button>
                     </h3>
                     <div class="table-responsive">
@@ -75,10 +75,8 @@
                                     <td>{{ case.par_type }}</td>
                                     <td>{{ case.req_parameter }}</td>
                                     <td>{{ case.create_time | date:"Y-m-d H:i:s" }}</td>
-                                    <td>
-                                        <a href="/manage/edit_project/{{ project.id }}/">编辑</a>
-                                        <a href="/manage/delete_project/{{ project.id }}/">删除</a>
-                                    </td>
+                                    <td><a href="/interface/edit_case/{{case.id}}/" class="glyphicon glyphicon-pencil" aria-hidden="true"></a></td>
+                                    <td><a href="/interface/del_case/{{case.id}}/" onclick="return confirm('确定要删除该用例吗？')"class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -110,12 +108,24 @@
                 </div>
             {% endif %}
 
-            <!-- 调试页面 -->
-            {% if type == 'debug' %}
+            <!-- 创建用例页面 -->
+            {% if type == 'add_case' %}
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <div class="row">
-                        {% block api_debug %}
+                        {% block add_case %}
+                            <!--add_case.html-->
+                        {% endblock %}
+                    </div>
 
+                </div>
+            {% endif %}
+
+         <!-- 编辑调试用例页面 -->
+            {% if type == 'edit_case' %}
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="row">
+                        {% block edit_case %}
+                            <!--edit_case.html-->
                         {% endblock %}
                     </div>
 

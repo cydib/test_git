@@ -3,8 +3,9 @@ from interface_app import views
 
 urlpatterns = [
     path('case_manage/', views.case_manage),
-    path('debug/', views.debug),
-    path('api_debug/', views.api_debug),
+    path('add_case/', views.add_case),
+    path('debug_case/', views.debug_case),
+    path('edit_case/<int:cid>/', views.edit_case),
     path('get_porject_list/', views.get_porject_list),
     path('save_case/', views.save_case),
     path('search_case_name/', views.search_case_name)

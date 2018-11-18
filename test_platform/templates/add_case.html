@@ -1,5 +1,5 @@
 {% extends "case_manage.html" %}
-{% block api_debug %}
+{% block add_case %}
 
 <fieldset>
     <div id="legend" class="">
@@ -118,7 +118,7 @@
                 $("#warnurl").hide();
             }
 
-            $.post("/interface/api_debug/", {
+            $.post("/interface/debug_case/", {
                 "req_url": url,
                 "req_method": method,
                 "req_parameter": parameter
