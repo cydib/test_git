@@ -136,7 +136,8 @@ def search_case_name(request):
 
 def edit_case(request, cid):
     if request.method == "GET":
-        print("cid: ", cid)
+        case_name = TestCase.objects.filter(id=cid)
+        print("case_name", case_name)
     return render(request, "edit_case.html", {
         "type": "edit_case",
     })
