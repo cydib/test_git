@@ -9,24 +9,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 
-# 获取项目模块列表
-def get_porject_list(request):
-    project_list = Project.objects.all()
-    dataList = []
-    for project in project_list:
-        project_dict = {
-            "name": project.name
-        }
-        module_list = Module.objects.filter(project_id=project.id)
-        if len(module_list) != 0:
-            module_name = []
-            for module in module_list:
-                module_name.append(module.name)
 
-            project_dict["moduleList"] = module_name
-            dataList.append(project_dict)
-
-    return JsonResponse({"success": "true", "data": dataList})
 
 
 def case_manage(request):
@@ -136,8 +119,7 @@ def search_case_name(request):
 
 def edit_case(request, cid):
     if request.method == "GET":
-        case_name = TestCase.objects.filter(id=cid)
-        print("case_name", case_name)
-    return render(request, "edit_case.html", {
-        "type": "edit_case",
-    })
+        return render(request, "edit_case.html", {
+            "type": "edit_case"})
+    else:
+        return HttpResponse("404")

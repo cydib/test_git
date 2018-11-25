@@ -89,12 +89,10 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script type="text/javascript">
-    ProjectInit('project_name', 'module_name');
+    let url_path = document.location.pathname;
+    let case_id = url_path.split("/")[3];
+    CaseInfo(case_id);
 
-    $(document).ready(function () {
-
-
-    })
 
 </script>
 

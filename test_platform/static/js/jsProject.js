@@ -1,7 +1,18 @@
-var ProjectInit = function (_cmbProject, _cmbModule) {
+var ProjectInit = function (_cmbProject, _cmbModule, defaultProject, defaultModule) {
     var cmbProject = document.getElementById(_cmbProject);
     var cmbModule = document.getElementById(_cmbModule);
     var dataList = [];
+
+
+    //设置默认选项
+    function cmbSelect(cmb, str) {
+        for(var i=0; i< cmb.options.length; i++){
+            if(cmb.options[i].value == str){
+                cmb.selectedIndex = i;
+                return;
+            }
+        }
+    }
 
     //创建下拉选项
     function cmbAddOption(cmb, str, obj) {
@@ -34,13 +45,15 @@ var ProjectInit = function (_cmbProject, _cmbModule) {
                     cmbAddOption(cmbProject, dataList[i].name, dataList[i]);
                 }
 
+                cmbSelect(cmbProject, defaultProject);
                 changeProject();
                 cmbProject.onchange = changeProject;
             }
-            //$("#result").html(resp);
+
+            cmbSelect(cmbProject, defaultProject);
         });
     }
     // 调用getProjectList函数
     getProjectList();
 
-}
+};
