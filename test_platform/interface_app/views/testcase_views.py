@@ -1,15 +1,13 @@
 import requests, json
+from test_platform import common
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from project_app.models import Project, Module
 from interface_app.models import TestCase
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
-
-
-
 
 
 def case_manage(request):
@@ -123,3 +121,44 @@ def edit_case(request, cid):
             "type": "edit_case"})
     else:
         return HttpResponse("404")
+
+
+def update_case(request):
+    if request.method == "POST":
+        cid = request.POST.get("cid")
+        # print("cid", cid)
+        name = request.POST.get("name")
+        url = request.POST.get("req_url")
+        method = request.POST.get("req_method")
+        parameter = request.POST.get("req_parameter")
+        req_type = request.POST.get("req_type")
+        header = request.POST.get("header")
+        module_name = request.POST.get("module")
+
+        if url == "" or method == "" or req_type == "" or module_name == "":
+            return common.response_failed("必传参数为空")
+
+        if parameter == "":
+            parameter = "{}"
+
+        if header == "":
+            header = "{}"
+
+        module_obj = Module.objects.get(name=module_name)
+        case_obj = TestCase.objects.select_for_update().filter(id=cid).update(name=name,
+                                                                              url=url, req_method=method,
+                                                                              par_type=req_type,
+                                                                              req_headers=header,
+                                                                              module=module_obj,
+                                                                              req_parameter=parameter)
+        if case_obj == 1:
+            return common.response_succeed("更新成功！")
+        else:
+            return common.response_failed("更新失败！")
+    else:
+        return common.response_failed("请求方法错误")
+
+
+def del_case(request, cid):
+    TestCase.objects.get(id=cid).delete()
+    return HttpResponseRedirect('/interface/case_manage/')

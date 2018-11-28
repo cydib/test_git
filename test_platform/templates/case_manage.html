@@ -69,8 +69,8 @@
                             {% for case in testcases %}
                                 <tr>
                                     <td>{{ case.id }}</td>
-                                    <td>{{ case.project_id }}</td>
-                                    <td>{{ case.module_id }}</td>
+                                    <td>{{ case.module.project.name }}</td>
+                                    <td>{{ case.module.name }}</td>
                                     <td>{{ case.name }}</td>
                                     <td>{{ case.url }}</td>
                                     <td>{{ case.req_method }}</td>
