@@ -110,20 +110,27 @@
     $(document).ready(function () {
         // send测试请求
         $("#send").click(function () {
+            let tname = $("#req_name").val();
             let url = $("#req_url").val();
             let method = $('input[name="req_method"]:checked').val();
             let parameter = $("#req_parameter").val();
             let reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
-            if (url === "") {
-                $("#warnurl").text("请求url不能为空");
-                $("#warnurl").show();
-                return false;
+
+            if (tname === "" && url === "") {
+                $("#req_name").css('borderColor','red');
+                $("#req_url").css('borderColor','red');
+                return;
             }
-            else if (!reg.test(url)) {
+            else{
+                $("#req_name").css('borderColor','');
+                $("#req_url").css('borderColor','');
+            }
+
+            if (!reg.test(url)) {
                 console.log(reg.test(url));
                 $("#warnurl").text("请求url不正确");
                 $("#warnurl").show();
-                return false;
+                return;
             }
             else {
                 $("#warnurl").hide();
