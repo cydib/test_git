@@ -10,6 +10,7 @@ urlpatterns = [
     path('search_case_name/', testcase_views.search_case_name),
     path('del_case/<int:cid>/', testcase_views.del_case),
     path('update_case/', testcase_views.update_case),
+    path('api_assert/', testcase_views.api_assert),
 
 
 # 用例管理 -- 由JS调用的接口

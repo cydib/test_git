@@ -10,7 +10,7 @@ var CaseInfo = function (case_id) {
                 document.getElementById("req_url").value = result.url;
                 document.getElementById("req_header").value = result.reqHeader;
                 document.getElementById("req_parameter").value = result.reqParameter;
-                // document.getElementById("assert_text").value = result.assertText;
+                document.getElementById("assert").value = result.assertText;
 
                 if(result.reqMethod === "post"){
                     document.getElementById("post").setAttribute("checked", "")

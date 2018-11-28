@@ -69,6 +69,7 @@ def save_case(request):
         req_type = request.POST.get("req_type", "")
         header = request.POST.get("header", "")
         module_name = request.POST.get("module", "")
+        assert_text = request.POST.get("assert", "")
 
         if url == "" or method == "" or req_type == "" or module_name == "":
             return HttpResponse("必传参数为空")
@@ -84,7 +85,8 @@ def save_case(request):
         case = TestCase.objects.create(name=name, module=module_obj, url=url,
                                        req_method=method, req_headers=header,
                                        par_type=req_type,
-                                       req_parameter=parameter)
+                                       req_parameter=parameter,
+                                       req_assert=assert_text)
         if case is not None:
             return HttpResponse("保存成功！")
 
@@ -134,6 +136,7 @@ def update_case(request):
         req_type = request.POST.get("req_type")
         header = request.POST.get("header")
         module_name = request.POST.get("module")
+        req_assert = request.POST.get("assert")
 
         if url == "" or method == "" or req_type == "" or module_name == "":
             return common.response_failed("必传参数为空")
@@ -147,6 +150,7 @@ def update_case(request):
         module_obj = Module.objects.get(name=module_name)
         case_obj = TestCase.objects.select_for_update().filter(id=cid).update(name=name,
                                                                               url=url, req_method=method,
+                                                                              req_assert=req_assert,
                                                                               par_type=req_type,
                                                                               req_headers=header,
                                                                               module=module_obj,
@@ -162,3 +166,21 @@ def update_case(request):
 def del_case(request, cid):
     TestCase.objects.get(id=cid).delete()
     return HttpResponseRedirect('/interface/case_manage/')
+
+
+def api_assert(request):
+    if request.method == "POST":
+        result = request.POST.get("result", "")
+        assert_text = request.POST.get("assert", "")
+
+        if result == "" or assert_text == "":
+            return common.response_failed("验证的数据不能为空")
+
+        try:
+            assert assert_text in result
+        except AssertionError:
+            return common.response_failed("验证失败")
+        else:
+            return common.response_succeed("验证通过")
+    else:
+        return common.response_failed("请求方法错误")

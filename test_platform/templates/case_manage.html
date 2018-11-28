@@ -54,9 +54,9 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>用例名称</th>
                                 <th>所属项目</th>
                                 <th>所属模块</th>
-                                <th>用例名称</th>
                                 <th>URL</th>
                                 <th>请求方法</th>
                                 <th>参数类型</th>
@@ -69,9 +69,9 @@
                             {% for case in testcases %}
                                 <tr>
                                     <td>{{ case.id }}</td>
+                                    <td>{{ case.name }}</td>
                                     <td>{{ case.module.project.name }}</td>
                                     <td>{{ case.module.name }}</td>
-                                    <td>{{ case.name }}</td>
                                     <td>{{ case.url }}</td>
                                     <td>{{ case.req_method }}</td>
                                     <td>{{ case.par_type }}</td>

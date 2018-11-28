@@ -63,20 +63,25 @@
                     <span class="input-group-addon">Header</span>
                     <input id="req_header" type="text" class="form-control">
                 </div>
-                <p style="color:#8B8989">说明：以字典的方式设置参数，如：{"content-type": "application/json"}</p>
+                <p style="color:#8B8989;font-size: 12px;">说明：以字典的方式设置参数，如：{"content-type": "application/json"}</p>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon">参数</span>
                     <input id="req_parameter" type="text" class="form-control">
                 </div>
-                <p style="color:#8B8989">说明：以字典的方式设置参数，如：{"id":1, "name":"名称"}</p>
+                <p style="color:#8B8989;font-size: 12px;">说明：以字典的方式设置参数，如：{"id":1, "name":"名称"}</p>
+
+                <div class="input-group">
+                    <span class="input-group-addon">断言</span>
+                    <textarea class="form-control"  id="assert" style="height: 81px;"></textarea>
+                </div>
+                <p style="color:#8B8989;font-size: 12px;">说明：填写需要检查的关键字，从返回结果中断言，包含则通过，否则失败</p>
+
+            <br>
                 <div style="width: 100%; height: 60px;">
-                    <button type="button" class="btn btn-primary" id="update" style="float: right;margin-right: 10px;">
-                        保存
-                    </button>
-                    <button type="button" class="btn btn-success" id="send" style="float: right;margin-right: 10px;">
-                        调试
-                    </button>
+                    <button type="button" class="btn btn-success" id="update" style="float: right;margin-right: 10px;">Save</button>
+                <button type="button" class="btn btn-primary" id="test" style="float: right;margin-right: 10px;">Test</button>
+                <button type="button" class="btn btn-info" id="send" style="float: right;margin-right: 10px;">Send</button>
                 </div>
 
             </form>
@@ -128,6 +133,19 @@
 
             });
 
+             // test测试断言
+            $("#test").click(function () {
+                let result = $("#result").val();
+                let assert_text = $("#assert").val();
+                $.post("/interface/api_assert/", {
+                    "result": result,
+                    "assert": assert_text
+                }, function (resp) {
+                    window.alert(resp.message);
+                });
+
+            });
+
             // 保存按钮
             $("#update").click(function () {
                 let name = $("#req_name").val();
@@ -137,6 +155,7 @@
                 let req_type = $('input[name="req_type"]:checked').val();
                 let header = $("#req_header").val();
                 let module_name = $('select[id="module_name"]').val();
+                let assert_text = $("#assert").val();
 
                 $.post("/interface/update_case/", {
                     "cid": case_id,
@@ -147,6 +166,7 @@
                     "req_type": req_type,
                     "header": header,
                     "module": module_name,
+                    "assert": assert_text
                 }, function (resp) {
                         alert(resp.message);
                 });
