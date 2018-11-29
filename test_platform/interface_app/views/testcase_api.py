@@ -1,16 +1,19 @@
 import json
 import requests
+
 from test_platform import common
 from interface_app.models import TestCase
 from project_app.models import Project, Module
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def get_porject_list(request):
     """
-        获取项目模块列表
-        :param request:
-        :return: 项目接口列表
-        """
+    获取项目模块列表
+    :param request:
+    :return: 项目接口列表
+    """
     if request.method == "GET":
         project_list = Project.objects.all()
         data_list = []
@@ -32,6 +35,7 @@ def get_porject_list(request):
         return common.response_failed("请求方法错误")
 
 
+@login_required
 def get_case_info(request):
     """
    获取接口数据

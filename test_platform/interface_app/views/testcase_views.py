@@ -1,4 +1,6 @@
 import requests, json
+from django.contrib.auth.decorators import login_required
+
 from test_platform import common
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -9,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
-
+@login_required
 def case_manage(request):
     testcases = TestCase.objects.all()
     paginator = Paginator(testcases, 10)
@@ -30,6 +32,7 @@ def case_manage(request):
         return HttpResponse("404")
 
 
+@login_required
 def add_case(request):
     if request.method == "GET":
         return render(request, "add_case.html", {"type": "add_case"})
@@ -37,6 +40,7 @@ def add_case(request):
         return HttpResponse("404")
 
 
+@login_required
 def debug_case(request):
     if request.method == "POST":
         url = request.POST.get("req_url")
@@ -56,6 +60,7 @@ def debug_case(request):
         return HttpResponse(r.text)
 
 
+@login_required
 def save_case(request):
     """
     保存测试用例
@@ -93,6 +98,7 @@ def save_case(request):
         return HttpResponse("404")
 
 
+@login_required
 def search_case_name(request):
     if request.method == "GET":
         case_name = request.GET.get("case_name", "")
@@ -116,6 +122,7 @@ def search_case_name(request):
         return HttpResponse("404")
 
 
+@login_required
 def edit_case(request, cid):
     if request.method == "GET":
         return render(request, "edit_case.html", {
@@ -124,6 +131,7 @@ def edit_case(request, cid):
         return HttpResponse("404")
 
 
+@login_required
 def update_case(request):
     if request.method == "POST":
         cid = request.POST.get("cid")
@@ -162,11 +170,13 @@ def update_case(request):
         return common.response_failed("请求方法错误")
 
 
+@login_required
 def del_case(request, cid):
     TestCase.objects.get(id=cid).delete()
     return HttpResponseRedirect('/interface/case_manage/')
 
 
+@login_required
 def api_assert(request):
     if request.method == "POST":
         result = request.POST.get("result", "")

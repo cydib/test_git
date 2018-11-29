@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from test_platform import common
 from interface_app.models import TestCase, TestTask
@@ -6,6 +7,7 @@ from django.http import HttpResponse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
+@login_required
 def task_manage(request):
     tasks = TestTask.objects.all()
     paginator = Paginator(tasks, 5)
@@ -22,7 +24,7 @@ def task_manage(request):
     if request.method == "GET":
         return render(request, "task_manage.html", {"type": "list", "tasks": contacts})
 
-
+@login_required
 def add_task(request):
     if request.method == "GET":
         return render(request, "add_task.html", {"type": "add_task"})

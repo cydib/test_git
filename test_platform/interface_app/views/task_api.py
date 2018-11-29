@@ -1,8 +1,11 @@
+from django.contrib.auth.decorators import login_required
+
 from interface_app.models import TestCase
 from project_app.models import Project, Module
 from test_platform import common
 
 
+@login_required
 def get_case_list(request):
     """
    获取测试用例列表

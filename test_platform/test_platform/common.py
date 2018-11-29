@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 
-
 def response_succeed(message="请求成功", data={}):
     """
     响应成功
