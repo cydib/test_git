@@ -1,0 +1,93 @@
+{% extends "task_manage.html" %}
+{% block add_task %}
+
+<fieldset>
+    <div id="legend" class="">
+        <legend class="">创建任务</legend>
+    </div>
+
+    <div style="width:80%; margin-left: 20px;">
+        <form action="/debug/" method="get" class="bs-example bs-example-form" role="form" style="margin-top: 30px">
+            <div class="input-group">
+                <span class="input-group-addon">名称</span>
+                <input id="req_name" type="text" class="form-control" placeholder="name">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">描述</span>
+                <textarea class="form-control" id="assert"></textarea>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">用例</span>
+                <input id="req_url" type="text" class="form-control" placeholder="url">
+            </div>
+
+            <br>
+            <div style="width: 100%; height: 60px;">
+                <button type="button" class="btn btn-success" id="save" style="float: right;margin-right: 10px;">Save</button>
+                <button type="button" class="btn btn-primary" id="test" style="float: right;margin-right: 10px;">Test</button>
+                <button type="button" class="btn btn-info" id="send" style="float: right;margin-right: 10px;">Send</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</fieldset>
+
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    ProjectInit('project_name', 'module_name');
+
+    // 清空结果区域
+    $("#clear_result").click(function () {
+        $("#result").val('');
+    });
+
+    //ajax获取结果
+    $(document).ready(function () {
+        // send测试请求
+        $("#send").click(function () {
+            let tname = $("#req_name").val();
+            let url = $("#req_url").val();
+            let method = $('input[name="req_method"]:checked').val();
+            let parameter = $("#req_parameter").val();
+            let reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+
+            if (tname === "" && url === "") {
+                $("#req_name").css('borderColor','red');
+                $("#req_url").css('borderColor','red');
+                return;
+            }
+            else{
+                $("#req_name").css('borderColor','');
+                $("#req_url").css('borderColor','');
+            }
+
+            if (!reg.test(url)) {
+                console.log(reg.test(url));
+                $("#warnurl").text("请求url不正确");
+                $("#warnurl").show();
+                return;
+            }
+            else {
+                $("#warnurl").hide();
+            }
+
+            $.post("/interface/debug_case/", {
+                "req_url": url,
+                "req_method": method,
+                "req_parameter": parameter
+            }, function (resp) {
+                $("#result").val(resp);
+            });
+
+        });
+
+
+    });
+</script>
+
+{% endblock %}

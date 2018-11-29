@@ -25,7 +25,6 @@ def case_manage(request):
         contacts = paginator.page(paginator.num_pages)
 
     if request.method == "GET":
-        testcase = TestCase.objects.all()
         return render(request, "case_manage.html", {"type": "list", "testcases": contacts})
     else:
         return HttpResponse("404")

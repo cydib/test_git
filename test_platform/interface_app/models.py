@@ -21,3 +21,18 @@ class TestCase(models.Model):
     # 在admin后台显示创建时的标题，而不是project1、2
     def __str__(self):
         return self.name
+
+
+class TestTask(models.Model):
+    '''
+    任务表
+    '''
+    name = models.CharField("任务名称", max_length=100, blank=False, default="")
+    describe = models.TextField("任务描述", max_length=10, default="")
+    status = models.IntegerField("任务状态", default=0)  # 未执行、执行中、执行完成、排队中
+    cases = models.TextField("关联用例", default="")
+    create_time = models.DateTimeField("创建时间", auto_now=True)
+
+    # 在admin后台显示创建时的标题，而不是project1、2
+    def __str__(self):
+        return self.name
