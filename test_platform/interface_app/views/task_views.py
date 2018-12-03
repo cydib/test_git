@@ -28,3 +28,19 @@ def task_manage(request):
 def add_task(request):
     if request.method == "GET":
         return render(request, "add_task.html", {"type": "add_task"})
+
+
+@login_required
+def save_task(request):
+    if request.method == "POST":
+        task_name = request.POST.get("task_name", "")
+        task_describe = request.POST.get("task_describe", "")
+        task_case = request.POST.get("task_cases", "")
+        task_status = request.POST.get("task_status", "")
+
+        if task_name == "":
+            return common.response_failed("任务名称不能为空")
+        TestTask.objects.create(name=task_name, describe=task_describe, cases=task_case,status=task_status)
+        return common.response_succeed("成功")
+    else:
+        return common.response_failed("请求方法不正确")

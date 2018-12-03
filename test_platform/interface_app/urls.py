@@ -21,5 +21,6 @@ urlpatterns = [
     path("task_manage/", task_views.task_manage),
     path("add_task/", task_views.add_task),
     path("get_case_list/", task_api.get_case_list),
+    path("save_task/", task_views.save_task),
 
 ]

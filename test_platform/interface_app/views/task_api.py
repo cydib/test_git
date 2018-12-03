@@ -1,11 +1,9 @@
-from django.contrib.auth.decorators import login_required
 
 from interface_app.models import TestCase
 from project_app.models import Project, Module
 from test_platform import common
 
 
-@login_required
 def get_case_list(request):
     """
    获取测试用例列表
@@ -21,7 +19,11 @@ def get_case_list(request):
                 cases = TestCase.objects.filter(module_id=m.id)
                 for c in cases:
                     case_info = p.name + " -> " + m.name + " -> " + c.name
-                    cases_list.append(case_info)
+                    case_dict = {
+                        "id": c.id,
+                        "name": case_info
+                    }
+                    cases_list.append(case_dict)
 
         return common.response_succeed(data=cases_list)
     else:
