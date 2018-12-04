@@ -56,13 +56,7 @@
         let tName = $("#task_name").val();
         let tDescribe = $("#task_des").val();
         let selectCases  =  document.querySelectorAll("div.caseList > input");
-        let estatus = document.getElementsByName("status");
-        let status = "";
-        for(let i = 0; i<estatus.length; i++){
-            if(document.getElementsByName("status")[i].checked === true){
-                status = document.getElementsByName("status")[i].value
-            }
-        }
+        let status = $('input[name="status"]:checked').val();
 
         var selectCasesId = "";
 			for (let i = 0; i < selectCases.length; i++) {
