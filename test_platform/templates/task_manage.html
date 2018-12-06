@@ -46,7 +46,7 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h3 class="sub-header">任务列表
                         <button type="button" class="btn btn-success" style="float: right;"
-                                onclick="window.location.href='/interface/add_task/'">创建
+                                onclick="window.location.href='/interface/add_task/'">创建任务
                         </button>
                     </h3>
                     <div class="table-responsive">
@@ -84,10 +84,10 @@
                                         <a href="/interface/run_task/{{task.id}}/" style="margin-right: 20px;">
 									        <span class="el-icon-caret-right"></span>
 								        </a>
-                                        <a href="/interface/edit_case/{{case.id}}/" style="margin-right: 20px;">
+                                        <a href="/interface/edit_task/{{task.id}}/" style="margin-right: 20px;">
                                             <span class="el-icon-edit"></span>
                                         </a>
-                                        <a href="/interface/del_case/{{case.id}}/" style="margin-right: 10px;" onclick="return confirm('确定要删除该任务吗？')">
+                                        <a href="/interface/del_task/{{task.id}}/" style="margin-right: 10px;" onclick="return confirm('确定要删除该任务吗？')">
                                             <span class="el-icon-delete"></span>
                                         </a>
                                     </td>
@@ -136,14 +136,57 @@
 
          <!-- 编辑调试用例页面 -->
             {% if type == 'edit_task' %}
-                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <div class="row">
-                        {% block edit_task %}
-                            <!--edit_task.html-->
-                        {% endblock %}
-                    </div>
+                        <fieldset>
+                        <div id="legend" class="">
+                            <legend class="">创建任务</legend>
+                        </div>
 
+                        <div style="width:80%; margin-left: 20px;">
+                            <form action="/debug/" method="get" class="bs-example bs-example-form" role="form" style="margin-top: 30px">
+                                <div class="input-group">
+                                    <span class="input-group-addon">名称</span>
+                                    <input id="task_name" type="text" class="form-control" placeholder="name">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon">描述</span>
+                                    <textarea class="form-control" id="task_des"></textarea>
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span>状态：</span>
+                                        <input type="radio" name="status" value="0" checked/>未执行
+                                        <input type="radio" name="status" value="1"/>执行中
+                                        <input type="radio" name="status" value="2"/>已执行
+                                        <input type="radio" name="status" value="3"/>排队中
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon">用例</span>
+                                   <div class="caseList form-control" id="test_case" style="overflow-y:scroll; height: 200px; background: #FFFFFF; padding-left: 15px;">
+                                </div>
+
+                                </div>
+                                <br>
+                                <div style="width: 100%; height: 60px;">
+                                    <button type="button" class="btn btn-success" id="save_task" style="float: right;margin-right: 10px;">Save</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+                    </fieldset>
                 </div>
+           </div>
+                <script type="text/javascript">
+                    let url_path = document.location.pathname;
+                    let task_id = url_path.split("/")[3];
+                    TaskInfo(task_id);
+                </script>
             {% endif %}
 
         </div>

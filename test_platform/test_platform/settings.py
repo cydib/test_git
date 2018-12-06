@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    # "dj_pagination",
+    # "dj_pagination",  # 分页功能
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'pagination.middleware.PaginationMiddleware',
+    # 'pagination.middleware.PaginationMiddleware',  # 分页功能
 ]
 
 ROOT_URLCONF = 'test_platform.urls'
@@ -65,11 +65,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # ("django.core.context_processors.auth",
-                #  "django.core.context_processors.debug",
-                #  "django.core.context_processors.i18n",
-                #  "django.core.context_processors.media",
-                #  "django.core.context_processors.request"),
+                # 分页功能
+                # "django.core.context_processors.auth",
+                # "django.core.context_processors.debug",
+                # "django.core.context_processors.i18n",
+                # "django.core.context_processors.media",
+                # "django.core.context_processors.request",
             ],
         },
     },

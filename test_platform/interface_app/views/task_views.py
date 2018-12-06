@@ -10,7 +10,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 @login_required
 def task_manage(request):
     tasks = TestTask.objects.all()
-    paginator = Paginator(tasks, 5)
+    paginator = Paginator(tasks, 10)
     page = request.GET.get('page')
 
     try:
@@ -44,3 +44,8 @@ def save_task(request):
         return common.response_succeed("成功")
     else:
         return common.response_failed("请求方法不正确")
+
+
+@login_required
+def edit_task(request, tid):
+    return render(request, "task_manage.html", {"type": "edit_task"})
