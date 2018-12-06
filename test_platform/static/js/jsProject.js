@@ -78,13 +78,18 @@ var CaseListInit = function () {
                 }
 
                 let devCaseList = document.querySelector(".caseList");
-                let sall = '<input type="checkbox" id="selectAll"/>全选 / 反选<br>'
+                let sall = '<input type="checkbox" id="selectAll"/>全选 / 取消<br>'
                 let all = sall + options;
                 devCaseList.innerHTML = all;
             }
             else {
                 alert(resp.message);
             }
+
+            $("#selectAll").click(function() {
+            $(":checkbox[name='ids']").prop("checked", this.checked);
+        });
+
         });
 
     }

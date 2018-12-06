@@ -81,13 +81,14 @@
                                     <td>{{ task.describe }}</td>
                                     <td>{{ task.create_time | date:"Y-m-d H:i:s" }}</td>
                                     <td>
-                                        <a href="/interface/edit_case/{{case.id}}/">
-                                            <i class="el-icon-edit"></i>
+                                        <a href="/interface/run_task/{{task.id}}/" style="margin-right: 20px;">
+									        <span class="el-icon-caret-right"></span>
+								        </a>
+                                        <a href="/interface/edit_case/{{case.id}}/" style="margin-right: 20px;">
+                                            <span class="el-icon-edit"></span>
                                         </a>
-                                    </td>
-                                    <td>
-                                        <a href="/interface/del_case/{{case.id}}/" onclick="return confirm('确定要删除该任务吗？')">
-                                            <i class="el-icon-delete"></i>
+                                        <a href="/interface/del_case/{{case.id}}/" style="margin-right: 10px;" onclick="return confirm('确定要删除该任务吗？')">
+                                            <span class="el-icon-delete"></span>
                                         </a>
                                     </td>
                                 </tr>

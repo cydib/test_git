@@ -65,6 +65,8 @@
                     </tr>
                     </thead>
                     <tbody>
+{#                    {% load pagination_tags %}#}
+{#                    {% autopaginate projects 20 %}#}
                     {% for p in projects %}
                     <tr>
                         <td>{{p.id}}</td>
@@ -72,14 +74,17 @@
                         <td>{{p.status}}</td>
                         <td>{{p.describe}}</td>
                         <td>{{p.create_time}}</td>
-                        <td><a href="/manage/edit_project/{{p.id}}/" class="glyphicon glyphicon-pencil"
-                               aria-hidden="true"></a></td>
                         <td>
-                            <a href="/manage/del_project/{{p.id}}/" onclick="return confirm('确定要删除该项目吗？')"
-                               class="glyphicon glyphicon-remove"
-                               aria-hidden="true"></a></td>
+                            <a href="/manage/edit_project/{{p.id}}/" style="margin-right: 20px;">
+                                <i class="el-icon-edit"></i>
+                            </a>
+                            <a href="/manage/del_project/{{p.id}}/" style="margin-right: 20px;" onclick="return confirm('确定要删除该项目吗？')">
+                                <i class="el-icon-delete"></i>
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
+{#                    {% paginate %}#}
                     </tbody>
                 </table>
             </div>

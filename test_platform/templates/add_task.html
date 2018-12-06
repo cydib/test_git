@@ -48,23 +48,19 @@
 <script type="text/javascript">
     CaseListInit();
 
-    $("#selectAll").click(function() {
-        $(":checkbox[name='ids']").prop("checked", this.checked);
-    });
-
     $("#save_task").click(function () {
         let tName = $("#task_name").val();
         let tDescribe = $("#task_des").val();
-        let selectCases  =  document.querySelectorAll("div.caseList > input");
+        let selectCases  =  document.querySelectorAll("div.caseList > input[name='ids']");
         let status = $('input[name="status"]:checked').val();
 
         var selectCasesId = "";
-			for (let i = 0; i < selectCases.length; i++) {
-				if (selectCases[i].checked === true){
-					let case_id = selectCases[i].value;
-					selectCasesId += case_id + ","
-				}
-			}
+            for (let i = 0; i < selectCases.length; i++) {
+                if (selectCases[i].checked === true){
+                    let case_id = selectCases[i].value;
+                    selectCasesId += case_id + ","
+                }
+            }
         console.log(selectCasesId);
         $.post("/interface/save_task/",{
             "task_name": tName,
@@ -75,9 +71,6 @@
             alert(resp.message)
         })
     })
-
-
-
 
 
 </script>

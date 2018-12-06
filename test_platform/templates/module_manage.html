@@ -72,12 +72,14 @@
                         <td>{{m.describe}}</td>
                         <td>{{m.project}}</td>
                         <td>{{m.create_time}}</td>
-                        <td><a href="/manage/edit_module/{{m.id}}/" class="glyphicon glyphicon-pencil"
-                               aria-hidden="true"></a></td>
                         <td>
-                            <a href="/manage/del_module/{{m.id}}/" onclick="return confirm('确定要删除该模块吗？')"
-                               class="glyphicon glyphicon-remove"
-                               aria-hidden="true"></a></td>
+                            <a href="/manage/edit_module/{{m.id}}/" style="margin-right: 25px;">
+                                <i class="el-icon-edit"></i>
+                            </a>
+                            <a href="/manage/del_module/{{m.id}}/" onclick="return confirm('确定要删除该模块吗？')" style="margin-right: 20px;">
+                                <i class="el-icon-delete"></i>
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                     </tbody>
