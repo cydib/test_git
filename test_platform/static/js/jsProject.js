@@ -72,7 +72,11 @@ var CaseListInit = function () {
                 let cases = resp.data;
 
                 for (let i = 0; i < cases.length; i++) {
-                    let option = '<input type="checkbox" name="ids" value="' + cases[i].id + '" /> ' + cases[i].name + '<br>'
+                    let option = '<input type="checkbox" name="ids" value="'
+                        + cases[i].id
+                        + '"/>'
+                        + cases[i].name
+                        + '<br>'
                     options += option;
                 }
 
@@ -85,9 +89,9 @@ var CaseListInit = function () {
                 alert(resp.message);
             }
 
-            $("#selectAll").click(function() {
-            $(":checkbox[name='ids']").prop("checked", this.checked);
-        });
+            $("#selectAll").click(function () {
+                $(":checkbox[name='ids']").prop("checked", this.checked);
+            });
 
         });
 

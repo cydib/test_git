@@ -49,7 +49,7 @@ def get_task_info(request):
         task_case = task_obj.cases
 
         task_info = {
-            "task_Id":task_id,
+            "task_Id": task_id,
             "task_name": task_name,
             "task_des": task_des,
             "task_status": task_status,
