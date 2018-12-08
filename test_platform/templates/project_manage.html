@@ -65,8 +65,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% load pagination_tags %}
-                    {% autopaginate projects 2 %}
+{#                    {% load pagination_tags %}#}
+{#                    {% autopaginate projects 2 %}#}
                     {% for p in projects %}
                     <tr>
                         <td>{{p.id}}</td>
@@ -84,7 +84,7 @@
                         </td>
                     </tr>
                     {% endfor %}
-                    {% paginate %}
+{#                    {% paginate %}#}
                     </tbody>
                 </table>
             </div>

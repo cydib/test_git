@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'user_app.apps.UserAppConfig',
     'project_app.apps.ProjectAppConfig',
     'interface_app.apps.InterfaceAppConfig',
-    'dj_pagination',  # 分页功能
+    # 'dj_pagination',  # 分页功能
 ]
 
 MIDDLEWARE = [
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'dj_pagination.middleware.PaginationMiddleware',  # 分页功能
+    # 'dj_pagination.middleware.PaginationMiddleware',  # 分页功能
 ]
 
 ROOT_URLCONF = 'test_platform.urls'
@@ -64,9 +64,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.media",
-                'django.contrib.auth.context_processors.auth',
+                # "django.template.context_processors.i18n",
+                # "django.template.context_processors.media",
+                # 'django.contrib.auth.context_processors.auth',
             ],
         },
     },
