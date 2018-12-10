@@ -1,5 +1,4 @@
 var TaskInfo = function (tid) {
-
     function getTaskInfo() {
         $.get("/interface/get_task_info/", {
             "taskId": tid,
@@ -23,16 +22,29 @@ var TaskInfo = function (tid) {
                         document.getElementById("waiting").setAttribute("checked", "");
                         break;
                 }
-                let task_case = result.task_case.split(",");
-                // console.log(document.getElementsByName("ids"))
-                console.log(document.getElementById("cases_1"))
-                // for (let i = 0; i < task_case.length; i++) {
-                //     console.log(i, task_case[i])
-                //     console.log(cases[i].value)
-                //     if (document.getElementsByName("ids")[i].value === result.task_case.split(",")[i]) {
-                //         document.getElementsByName("ids")[i].checked = true;
-                //     }
-                // }
+
+                let test_case = result.task_case;
+                var options = "";
+                for(let i = 0 ; i< test_case.length; i++)
+                {
+                    let status = test_case[i].select===true?"checked":"";
+                    let option = '<input type="checkbox" name="ids" value="'
+                        + test_case[i].case_id
+                        + '"'+status+'/>'
+                        + test_case[i].case_name
+                        + '<br>'
+                    options += option;
+                }
+
+                let devCaseList = document.querySelector(".caseList");
+                let sall = '<input type="checkbox" id="selectAll"/>全选 / 取消<br>'
+                let all = sall + options;
+                devCaseList.innerHTML = all;
+
+                 $("#selectAll").click(function () {
+                $(":checkbox[name='ids']").prop("checked", this.checked);
+            });
+
             }
 
             else {

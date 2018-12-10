@@ -49,3 +49,25 @@ def save_task(request):
 @login_required
 def edit_task(request, tid):
     return render(request, "task_manage.html", {"type": "edit_task"})
+
+
+@login_required
+def update_task(request):
+    if request.method == "POST":
+        task_id = request.POST.get("task_id", "")
+        task_name = request.POST.get("task_name", "")
+        task_describe = request.POST.get("task_describe", "")
+        task_case = request.POST.get("task_cases", "")
+
+        if task_name == "" or task_id == "":
+            return common.response_failed("任务ID或名称不能为空")
+
+        task_obj = TestTask.objects.select_for_update().filter(id=task_id).update(name=task_name,
+                                                                                  describe=task_describe,
+                                                                                  cases=task_case,)
+        if task_obj == 1:
+            return common.response_succeed("更新成功！")
+        else:
+            return common.response_failed("更新失败！")
+    else:
+        return common.response_failed("请求方法错误")

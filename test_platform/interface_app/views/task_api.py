@@ -37,7 +37,7 @@ def get_task_info(request):
     """
     if request.method == "GET":
         task_id = request.GET.get("taskId", "")
-        print("task_id", task_id)
+        cases_info = []
         try:
             task_obj = TestTask.objects.get(pk=task_id)
         except TestTask.DoesNotExist:
@@ -47,13 +47,26 @@ def get_task_info(request):
         task_des = task_obj.describe
         task_status = task_obj.status
         task_case = task_obj.cases
+        select_case = task_case.split(",")
+        select_case.pop()
+        all_test_case = TestCase.objects.all()
+
+        for t in all_test_case:
+            module = Module.objects.filter(id=t.module_id)
+            project = Project.objects.filter(id=module[0].project_id)
+            cases_list = {
+                "case_id": t.id,
+                "case_name": project[0].name + " -> " + module[0].name + " -> " + t.name,
+                "select": True if (str(t.id) in select_case) else False,
+            }
+            cases_info.append(cases_list)
 
         task_info = {
             "task_Id": task_id,
             "task_name": task_name,
             "task_des": task_des,
             "task_status": task_status,
-            "task_case": task_case,
+            "task_case": cases_info,
         }
 
         return common.response_succeed(data=task_info)
