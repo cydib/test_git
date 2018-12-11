@@ -3,7 +3,7 @@ from django.shortcuts import render
 from test_platform import common
 from interface_app.models import TestCase, TestTask
 from project_app.models import Project, Module
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
@@ -24,6 +24,7 @@ def task_manage(request):
     if request.method == "GET":
         return render(request, "task_manage.html", {"type": "list", "tasks": contacts})
 
+
 @login_required
 def add_task(request):
     if request.method == "GET":
@@ -40,8 +41,8 @@ def save_task(request):
 
         if task_name == "":
             return common.response_failed("任务名称不能为空")
-        TestTask.objects.create(name=task_name, describe=task_describe, cases=task_case,status=task_status)
-        return common.response_succeed("成功")
+        TestTask.objects.create(name=task_name, describe=task_describe, cases=task_case, status=task_status)
+        return common.response_succeed("任务创建成功")
     else:
         return common.response_failed("请求方法不正确")
 
@@ -64,10 +65,16 @@ def update_task(request):
 
         task_obj = TestTask.objects.select_for_update().filter(id=task_id).update(name=task_name,
                                                                                   describe=task_describe,
-                                                                                  cases=task_case,)
+                                                                                  cases=task_case, )
         if task_obj == 1:
             return common.response_succeed("更新成功！")
         else:
             return common.response_failed("更新失败！")
     else:
         return common.response_failed("请求方法错误")
+
+
+@login_required
+def delete_task(request, tid):
+    TestTask.objects.get(id=tid).delete()
+    return HttpResponseRedirect('/interface/task_manage/')

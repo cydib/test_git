@@ -87,7 +87,7 @@
                                         <a href="/interface/edit_task/{{ task.id }}/" style="margin-right: 20px;">
                                             <span class="el-icon-edit"></span>
                                         </a>
-                                        <a href="/interface/del_task/{{ task.id }}/" style="margin-right: 10px;"
+                                        <a href="/interface/delete_task/{{ task.id }}/" style="margin-right: 10px;"
                                            onclick="return confirm('确定要删除该任务吗？')">
                                             <span class="el-icon-delete"></span>
                                         </a>
@@ -217,9 +217,9 @@
                                 "task_status":status,
                             }, function (resp) {
                                 alert(resp.message)
+
                             })
                         })
-
                      }
                 </script>
             {% endif %}
