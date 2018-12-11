@@ -85,6 +85,27 @@
                     </tbody>
                 </table>
             </div>
+                    <!-- 列表分页器 -->
+                    <div class="pagination">
+                        <span class="step-links">
+                            <ul class="pagination">
+                                {% if modules.has_previous %}
+                                    <li><a href="?case_name={{ case_name }}&page={{ modules.previous_page_number }}">&laquo;</a></li>
+                                {% endif %}
+
+                                <li><a href="#">{{ modules.number }}</a></li>
+
+                                {% if modules.has_next %}
+                                    {% if case_name %}
+                                        <li><a href="?case_name={{ case_name }}&page={{ modules.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ modules.next_page_number }}">&raquo;</a></li>
+                                    {% endif %}
+                                {% endif %}
+                                <li><a href="#">共 {{ modules.paginator.num_pages }} 页</a></li>
+                            </ul>
+                        </span>
+                    </div>
         </div>
         {% endif %}
 

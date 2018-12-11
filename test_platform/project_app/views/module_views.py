@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,7 +12,18 @@ from project_app.forms import ModuleForm
 def module_manage(request):
     username = request.session.get("user", '')
     module = Module.objects.all()
-    return render(request, "module_manage.html", {"user": username, "modules": module, "type": "list"})
+    paginator = Paginator(module, 10)
+    page = request.GET.get('page')
+
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        # 如果页数不是整型, 取第一页.
+        contacts = paginator.page(1)
+    except EmptyPage:
+        # 如果页数超出查询范围，取最后一页
+        contacts = paginator.page(paginator.num_pages)
+    return render(request, "module_manage.html", {"user": username, "modules": contacts, "type": "list"})
 
 
 @login_required

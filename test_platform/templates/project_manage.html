@@ -88,6 +88,28 @@
                     </tbody>
                 </table>
             </div>
+             <!-- 列表分页器 -->
+                    <div class="pagination">
+                        <span class="step-links">
+                            <ul class="pagination">
+                                {% if projects.has_previous %}
+                                    <li><a href="?case_name={{ case_name }}&page={{ projects.previous_page_number }}">&laquo;</a></li>
+                                {% endif %}
+
+                                <li><a href="#">{{ projects.number }}</a></li>
+
+                                {% if projects.has_next %}
+                                    {% if case_name %}
+                                        <li><a href="?case_name={{ case_name }}&page={{ projects.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
+                                    {% endif %}
+                                {% endif %}
+                                <li><a href="#">共 {{ projects.paginator.num_pages }} 页</a></li>
+                            </ul>
+                        </span>
+                    </div>
+
         </div>
         {% endif %}
 
