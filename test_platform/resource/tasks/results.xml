@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="InterfaceTest-20181211142615" tests="1" time="6.893">
+	<testcase classname="InterfaceTest" name="test_run_casess_00001_38" time="6.893"/>
+	<system-out>
+<![CDATA[URL http://httpbin.org/get
+·½·¨ get
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

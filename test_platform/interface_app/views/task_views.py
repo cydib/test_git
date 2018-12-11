@@ -1,5 +1,8 @@
+import json
+import os
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from interface_app.apps import TASK_PATH, RUN_TASK_FILE
 from test_platform import common
 from interface_app.models import TestCase, TestTask
 from project_app.models import Project, Module
@@ -78,3 +81,42 @@ def update_task(request):
 def delete_task(request, tid):
     TestTask.objects.get(id=tid).delete()
     return HttpResponseRedirect('/interface/task_manage/')
+
+
+@login_required
+def run_task(request, tid):
+    if request.method == "GET":
+        task_obj = TestTask.objects.get(id=tid)
+        cases_list = task_obj.cases.split(",")
+        cases_list.pop()
+
+        task_obj.status = 1
+        task_obj.save()
+
+        all_cases_list = {}
+        for case in cases_list:
+            case_obj = TestCase.objects.get(id=case)
+            case_dict = {
+                "url": case_obj.url,
+                "method": case_obj.req_method,
+                "type_": case_obj.par_type,
+                "headers": case_obj.req_headers,
+                "parameter": case_obj.req_parameter,
+                "assert_": case_obj.req_assert
+            }
+            all_cases_list[case_obj.id] = case_dict
+        print(all_cases_list)
+        cases_str = json.dumps(all_cases_list)
+
+        cases_data_file = TASK_PATH + "cases_data.json"
+        print(cases_data_file)
+
+        with open(cases_data_file, "w+") as f:
+            f.write(cases_str)
+
+        # 运行测试
+        os.system("py " + RUN_TASK_FILE)
+
+        return HttpResponseRedirect("/interface/task_manage")
+    else:
+        return HttpResponse("404")
