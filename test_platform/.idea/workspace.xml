@@ -29,11 +29,29 @@
       <file leaf-file-name="task_views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface_app/views/task_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="-333">
+              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case_manage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/case_manage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1062">
+              <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_case.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/add_case.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-288">
+              <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -80,24 +98,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_task.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/add_task.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="70" column="31" lean-forward="true" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
-              <folding>
-                <element signature="e#1554#1594#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="task_manage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/task_manage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+            <state relative-caret-position="-549">
+              <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
               <folding>
+                <element signature="e#8051#8091#0#HTML" expanded="true" />
                 <element signature="e#9039#9121#0#HTML" expanded="true" />
                 <element signature="e#9481#9521#0#HTML" expanded="true" />
               </folding>
@@ -144,8 +151,8 @@
         <option value="$PROJECT_DIR$/static/js/taskInfo.js" />
         <option value="$PROJECT_DIR$/interface_app/urls.py" />
         <option value="$PROJECT_DIR$/templates/add_task.html" />
-        <option value="$PROJECT_DIR$/interface_app/views/task_views.py" />
         <option value="$PROJECT_DIR$/templates/task_manage.html" />
+        <option value="$PROJECT_DIR$/interface_app/views/task_views.py" />
       </list>
     </option>
   </component>
@@ -536,16 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/case_manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
-          <folding>
-            <element signature="e#2223#2244#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -616,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_app/views/project_views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -644,16 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="23" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interface_app/views/task_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -691,6 +671,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" selection-start-line="3" selection-end-line="75" selection-end-column="9" />
+          <folding>
+            <element signature="e#1554#1594#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interface_app/views/task_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -701,21 +691,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add_task.html">
+    <entry file="file://$PROJECT_DIR$/interface_app/views/task_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="70" column="31" lean-forward="true" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+        <state relative-caret-position="-333">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
           <folding>
-            <element signature="e#1554#1594#0#HTML" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/case_manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1062">
+          <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="109" column="35" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/task_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+        <state relative-caret-position="-549">
+          <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
           <folding>
+            <element signature="e#8051#8091#0#HTML" expanded="true" />
             <element signature="e#9039#9121#0#HTML" expanded="true" />
             <element signature="e#9481#9521#0#HTML" expanded="true" />
           </folding>

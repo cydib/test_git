@@ -28,7 +28,7 @@ def task_manage(request):
 @login_required
 def add_task(request):
     if request.method == "GET":
-        return render(request, "add_task.html", {"type": "add_task"})
+        return render(request, "task_manage.html", {"type": "add_task"})
 
 
 @login_required
