@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<testsuite errors="0" failures="0" name="InterfaceTest-20181211142615" tests="1" time="6.893">
-	<testcase classname="InterfaceTest" name="test_run_casess_00001_38" time="6.893"/>
+<testsuite errors="0" failures="0" name="InterfaceTest-20181211191812" tests="1" time="1.357">
+	<testcase classname="InterfaceTest" name="test_run_casess_00001_40" time="1.357"/>
 	<system-out>
-<![CDATA[URL http://httpbin.org/get
+<![CDATA[URL https://api.github.com/events
 ·½·¨ get
 ]]>	</system-out>
 	<system-err>

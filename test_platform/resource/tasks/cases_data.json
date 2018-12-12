@@ -1,1 +1,1 @@
-{"38": {"url": "http://httpbin.org/get", "method": "get", "type_": "form", "headers": "{}", "parameter": "{'key1': 'value1', 'key2': 'value2'}", "assert_": "url"}}
+{"40": {"url": "https://api.github.com/events", "method": "get", "type_": "form", "headers": "{}", "parameter": "{}", "assert_": "id"}}
