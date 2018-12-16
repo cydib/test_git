@@ -8,7 +8,7 @@ from interface_app.models import TestCase, TestTask
 from project_app.models import Project, Module
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
+from interface_app.extend.task_thread import TaskThread
 
 @login_required
 def task_manage(request):
@@ -86,37 +86,7 @@ def delete_task(request, tid):
 @login_required
 def run_task(request, tid):
     if request.method == "GET":
-        task_obj = TestTask.objects.get(id=tid)
-        cases_list = task_obj.cases.split(",")
-        cases_list.pop()
-
-        task_obj.status = 1
-        task_obj.save()
-
-        all_cases_list = {}
-        for case in cases_list:
-            case_obj = TestCase.objects.get(id=case)
-            case_dict = {
-                "url": case_obj.url,
-                "method": case_obj.req_method,
-                "type_": case_obj.par_type,
-                "headers": case_obj.req_headers,
-                "parameter": case_obj.req_parameter,
-                "assert_": case_obj.req_assert
-            }
-            all_cases_list[case_obj.id] = case_dict
-        print(all_cases_list)
-        cases_str = json.dumps(all_cases_list)
-
-        cases_data_file = TASK_PATH + "cases_data.json"
-        print(cases_data_file)
-
-        with open(cases_data_file, "w+") as f:
-            f.write(cases_str)
-
-        # 运行测试
-        os.system("py " + RUN_TASK_FILE)
-
+        TaskThread(tid).new_run()
         return HttpResponseRedirect("/interface/task_manage")
     else:
         return HttpResponse("404")

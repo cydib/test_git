@@ -50,7 +50,7 @@ class InterfaceTest(unittest.TestCase):
 
 # 运行测试用例
 def run_cases():
-    with open(TASK_PATH + 'results.xml', 'w') as output:
+    with open(TASK_PATH + 'results.xml', 'w', encoding="utf-8") as output:
         unittest.main(
             testRunner=xmlrunner.XMLTestRunner(output=output),
             failfast=False, buffer=False, catchbreak=False)
