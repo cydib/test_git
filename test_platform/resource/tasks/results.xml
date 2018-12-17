@@ -1,37 +1,12 @@
-<?xml version="1.0" ?>
-<testsuite errors="1" failures="0" name="InterfaceTest-20181216175318" tests="3" time="19.963">
-	<testcase classname="InterfaceTest" name="test_run_casess_00002_29" time="9.864"/>
-	<testcase classname="InterfaceTest" name="test_run_casess_00003_30" time="10.095"/>
-	<testcase classname="InterfaceTest" name="test_run_casess_00001_28" time="0.004">
-		<error message="Invalid URL '4324324': No schema supplied. Perhaps you meant http://4324324?" type="MissingSchema">
-<![CDATA[Traceback (most recent call last):
-  File "C:\Python37\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "D:/code/python_test/test_platform_dev/test_platform/interface_app/extend/task_run.py", line 48, in test_run_casess
-    r = requests.post(url, headers=header_dict, json=parameter_dict)
-  File "C:\Python37\lib\site-packages\requests\api.py", line 112, in post
-    return request('post', url, data=data, json=json, **kwargs)
-  File "C:\Python37\lib\site-packages\requests\api.py", line 58, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "C:\Python37\lib\site-packages\requests\sessions.py", line 498, in request
-    prep = self.prepare_request(req)
-  File "C:\Python37\lib\site-packages\requests\sessions.py", line 441, in prepare_request
-    hooks=merge_hooks(request.hooks, self.hooks),
-  File "C:\Python37\lib\site-packages\requests\models.py", line 309, in prepare
-    self.prepare_url(url, params)
-  File "C:\Python37\lib\site-packages\requests\models.py", line 383, in prepare_url
-    raise MissingSchema(error)
-requests.exceptions.MissingSchema: Invalid URL '4324324': No schema supplied. Perhaps you meant http://4324324?
-]]>		</error>
-	</testcase>
-	<system-out>
-<![CDATA[URL 4324324
-方法 post
-URL http://192.168.1.1/
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite errors="0" failures="0" name="InterfaceTest-20181217104705" skipped="0" tests="1" time="0.500" timestamp="2018-12-17T10:47:05">
+		<testcase classname="InterfaceTest" name="test_run_casess_00001_34" time="0.500" timestamp="2018-12-17T10:47:05"/>
+		<system-out>
+<![CDATA[URL https://api.github.com/user
 方法 get
-URL https://api.github.com/events
-方法 get
-]]>	</system-out>
-	<system-err>
-<![CDATA[]]>	</system-err>
-</testsuite>
+]]>		</system-out>
+		<system-err>
+<![CDATA[]]>		</system-err>
+	</testsuite>
+</testsuites>
