@@ -27,5 +27,7 @@ urlpatterns = [
     path("update_task/", task_views.update_task),
     path("delete_task/<int:tid>/", task_views.delete_task),
     path("run_task/<int:tid>/", task_views.run_task),
+    path("view_task_result/<int:tid>/", task_views.view_task_result),
+    path("task_result_detail/", task_views.task_result_detail),
 
 ]

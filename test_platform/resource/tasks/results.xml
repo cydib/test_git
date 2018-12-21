@@ -1,9 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-	<testsuite errors="0" failures="0" name="InterfaceTest-20181217104705" skipped="0" tests="1" time="0.500" timestamp="2018-12-17T10:47:05">
-		<testcase classname="InterfaceTest" name="test_run_casess_00001_34" time="0.500" timestamp="2018-12-17T10:47:05"/>
+	<testsuite errors="2" failures="0" name="InterfaceTest-20181221173455" skipped="0" tests="3" time="2.637" timestamp="2018-12-21T17:34:58">
+		<testcase classname="InterfaceTest" name="test_run_casess_00003_34" time="0.480" timestamp="2018-12-21T17:34:58"/>
+		<testcase classname="InterfaceTest" name="test_run_casess_00001_24" time="1.132" timestamp="2018-12-21T17:34:57">
+			<error message="HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000028CFA300710&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))" type="ConnectionError">
+<![CDATA[Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "C:\Python37\lib\site-packages\urllib3\util\connection.py", line 83, in create_connection
+    raise err
+  File "C:\Python37\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 357, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000028CFA300710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python37\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028CFA300710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:/learn/test_platform_dev/test_platform/interface_app/extend/task_run.py", line 42, in test_run_casess
+    r = requests.get(url, headers=header_dict, params=parameter_dict)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028CFA300710>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+]]>			</error>
+		</testcase>
+		<testcase classname="InterfaceTest" name="test_run_casess_00002_26" time="1.025" timestamp="2018-12-21T17:34:58">
+			<error message="HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000028CFA9643C8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))" type="ConnectionError">
+<![CDATA[Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "C:\Python37\lib\site-packages\urllib3\util\connection.py", line 83, in create_connection
+    raise err
+  File "C:\Python37\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 357, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "C:\Python37\lib\site-packages\urllib3\connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000028CFA9643C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Python37\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python37\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028CFA9643C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python37\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:/learn/test_platform_dev/test_platform/interface_app/extend/task_run.py", line 42, in test_run_casess
+    r = requests.get(url, headers=header_dict, params=parameter_dict)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\adapters.py", line 508, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /interface/add_case/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028CFA9643C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+]]>			</error>
+		</testcase>
 		<system-out>
 <![CDATA[URL https://api.github.com/user
+方法 get
+URL http://127.0.0.1:8000/interface/add_case/
+方法 get
+URL http://127.0.0.1:8000/interface/add_case/
 方法 get
 ]]>		</system-out>
 		<system-err>

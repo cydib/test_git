@@ -1,1 +1,1 @@
-{"34": {"url": "https://api.github.com/user", "method": "get", "type_": "form", "headers": "{}", "parameter": "{}", "assert_": "message"}}
+{"24": {"url": "http://127.0.0.1:8000/interface/add_case/", "method": "get", "type_": "form", "headers": "{}", "parameter": "{}", "assert_": ""}, "26": {"url": "http://127.0.0.1:8000/interface/add_case/", "method": "get", "type_": "form", "headers": "{}", "parameter": "{}", "assert_": ""}, "34": {"url": "https://api.github.com/user", "method": "get", "type_": "form", "headers": "{}", "parameter": "{}", "assert_": "message"}}

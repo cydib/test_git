@@ -4,11 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from interface_app.apps import TASK_PATH, RUN_TASK_FILE
 from test_platform import common
-from interface_app.models import TestCase, TestTask
+from interface_app.models import TestCase, TestTask, TestResult
 from project_app.models import Project, Module
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from interface_app.extend.task_thread import TaskThread
+
 
 @login_required
 def task_manage(request):
@@ -90,3 +91,30 @@ def run_task(request, tid):
         return HttpResponseRedirect("/interface/task_manage")
     else:
         return HttpResponse("404")
+
+
+@login_required
+def view_task_result(request, tid):
+    if request.method == "GET":
+        task_obj = TestTask.objects.get(id=tid)
+        result_list = TestResult.objects.filter(task_id=tid)
+        return render(request, "task_manage.html", {
+            "type": "viewTaskResult",
+            "task_name": task_obj.name,
+            "task_result_list": result_list,
+        })
+    else:
+        return HttpResponse("404")
+
+
+@login_required
+def task_result_detail(request):
+    if request.method == "POST":
+        rid = request.POST.get("result_id", "")
+        result_obj = TestResult.objects.get(id=rid)
+        data = {
+            "result": result_obj.result,
+        }
+        return common.response_succeed("获取成功！", data=data)
+    else:
+        return common.response_failed("请求方法错误")
